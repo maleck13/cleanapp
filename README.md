@@ -15,3 +15,27 @@ cd $GOPATH/src/github.com && mkdir myapp
 cd myapp
 cleanapp -n=myapp -t=$GOPATH/src/github.com/maleck13/template_server
 ````
+
+This will create a structure and scoffold
+
+```
+├── cmd
+│   └── server  # this is were main lives and where the binary will be built
+├── install # provides resources for installing the app (wip)
+│   ├── kubernetes
+│   └── openshift
+└── pkg # main packages dir
+    ├── inmemdb # db interface framework/driver
+    ├── shop # core domain and buisiness logic
+    │   ├── dispatch
+    │   ├── orders
+    │   │   ├── README.md
+    │   │   ├── history.go #a use case order history
+    │   │   ├── history_test.go
+    │   │   ├── interfaces.go
+    │   │   ├── place.go # a use case (place order)
+    │   │   └── place_test.go
+    │   └── types.go # core domain model / entities
+    └── web # web interface framework/driver
+
+```    
